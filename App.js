@@ -1,12 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { MyTabs } from './MyTabs';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+    //   <Text>Hello world Pidor1111</Text>
+    //   <StatusBar style='auto' />
+    //   <Image
+    //     source={{ uri: 'https://picsum.photos/200/300' }}
+    //     style={{ width: 300, height: 300 }}
+    //   />
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+    // </View>
   );
 }
 
