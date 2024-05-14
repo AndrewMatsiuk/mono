@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { MyTabs } from './MyTabs';
+import { MyTabs } from './components/BottomTabs/MyTabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {

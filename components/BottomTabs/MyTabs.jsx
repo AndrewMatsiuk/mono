@@ -2,14 +2,14 @@ import { Feather, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { Text, View } from 'react-native';
-import { ImageSVG } from './components';
+import { ImageSVG } from '..';
 import {
   AccumulationScreen,
   CardsScreen,
   CashBackScreen,
   CreditsScreen,
   MoreInformationScreen,
-} from './screens';
+} from '../../screens';
 
 const Tab = createBottomTabNavigator();
 

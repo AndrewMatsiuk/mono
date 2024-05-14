@@ -28,7 +28,7 @@ export const SecondScreenStep = () => {
     fetch('https://api.monobank.ua/personal/client-info', {
       method: 'GET',
       headers: {
-        'X-Token': 'uDJ2D2sDb5BNUW2JRuamQKYPXEgk74zD4LfCONp0qljI', // Your api key
+        'X-Token': 'APIIKey', // Your api key
       },
     })
       .then((response) => response.json())
