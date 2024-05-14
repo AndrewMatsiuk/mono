@@ -2,6 +2,7 @@ import { Feather, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { Text, View } from 'react-native';
+import { ImageSVG } from './components';
 import {
   AccumulationScreen,
   CardsScreen,
@@ -25,17 +26,19 @@ export function MyTabs() {
         component={CardsScreen}
         options={() => ({
           tabBarLabel: ({ focused }) => (
-            <Text style={{ color: focused ? 'red' : 'black', fontSize: 12 }}>
+            <Text
+              style={{
+                color: focused ? 'red' : 'black',
+                fontSize: 12,
+              }}
+            >
               Card
             </Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name='credit-card'
-              size={24}
-              color={focused ? 'red' : 'black'}
-              style={{ marginTop: 6 }}
-            />
+            <View style={{ marginTop: 5 }}>
+              <ImageSVG.CreditCardSvg color={focused ? 'red' : 'black'} />
+            </View>
           ),
         })}
       />
@@ -49,12 +52,9 @@ export function MyTabs() {
             </Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name='pie-chart'
-              size={24}
-              color={focused ? 'red' : 'black'}
-              style={{ marginTop: 6 }}
-            />
+            <View style={{ marginTop: 6 }}>
+              <ImageSVG.PieChartSvg color={focused ? 'red' : 'black'} />
+            </View>
           ),
         })}
       />
@@ -68,12 +68,9 @@ export function MyTabs() {
             </Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <MaterialCommunityIcons
-              name='piggy-bank-outline'
-              size={28}
-              color={focused ? 'red' : 'black'}
-              style={{ marginTop: 6 }}
-            />
+            <View style={{ marginTop: 6 }}>
+              <ImageSVG.PiggyBankOutlineSvg color={focused ? 'red' : 'black'} />
+            </View>
           ),
         })}
       />
@@ -87,12 +84,9 @@ export function MyTabs() {
             </Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name='gift'
-              size={24}
-              color={focused ? 'red' : 'black'}
-              style={{ marginTop: 6 }}
-            />
+            <View style={{ marginTop: 6 }}>
+              <ImageSVG.GiftSvg color={focused ? 'red' : 'black'} />
+            </View>
           ),
         })}
       />
@@ -106,12 +100,9 @@ export function MyTabs() {
             </Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Octicons
-              name='apps'
-              size={24}
-              color={focused ? 'red' : 'black'}
-              style={{ marginTop: 6 }}
-            />
+            <View style={{ marginTop: 6 }}>
+              <ImageSVG.AppsSvg color={focused ? 'red' : 'black'} />
+            </View>
           ),
         })}
       />
