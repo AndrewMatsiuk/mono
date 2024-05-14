@@ -1,3 +1,3 @@
 This is a copy of monobank using their open API
-![FirstPage](FirstReadme.jpg)
-![SecondPage](SecondReadme.jpg)
+<img src="FirstReadme.jpg" alt="FirstPage" width="500"/>
+<img src="SecondReadme.jpg" alt="SecondPage" width="500"/>
