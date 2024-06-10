@@ -7,7 +7,7 @@ import {
 } from './components';
 
 //https://api.monobank.ua/personal/client-info
-export const CardsScreen = () => {
+export const CardsScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -46,7 +46,7 @@ export const CardsScreen = () => {
     },
     {
       key: '2',
-      component: <SecondScreenStep />,
+      component: <SecondScreenStep navigation={navigation} />,
     },
     {
       key: '3',

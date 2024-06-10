@@ -13,7 +13,7 @@ export const HistoryList = () => {
       {
         method: 'GET',
         headers: {
-          'X-Token': 'APIIKey', // Your api key
+          'X-Token': 'uDJ2D2sDb5BNUW2JRuamQKYPXEgk74zD4LfCONp0qljI', // Your api key
         },
       }
     )

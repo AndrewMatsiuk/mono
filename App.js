@@ -1,29 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { MyTabs } from './components/BottomTabs/MyTabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { MyTabs } from './components/BottomTabs/MyTabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LoginScreen } from './screens/LoginScreen';
+import { CardsScreen, SecondScreenStep } from './screens';
+import { TransactionOnCard } from './screens/TransactionOnCard';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+export const SecondScreenStepStack = () => {
   return (
-    // <View style={styles.container}>
-    //   <Text>Hello world Pidor1111</Text>
-    //   <StatusBar style='auto' />
-    //   <Image
-    //     source={{ uri: 'https://picsum.photos/200/300' }}
-    //     style={{ width: 300, height: 300 }}
-    //   />
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
-    // </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }} mode='modal'>
+      <Stack.Screen name='SecondScreenStep' component={SecondScreenStep} />
+      <Stack.Screen name='TransactionOnCard' component={TransactionOnCard} />
+    </Stack.Navigator>
+  );
+};
+
+function RootStack() {
+  return (
+    <Stack.Navigator mode='modal'>
+      <Stack.Screen
+        name='MyTabs'
+        component={MyTabs}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name='TransactionOnCard'
+        component={TransactionOnCard}
+        options={{
+          headerShown: true,
+          title: 'Transaction on Card',
+          headerBackTitleVisible: false,
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: '#2f2f2f',
+          },
+        }}
+      />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
+  );
+}

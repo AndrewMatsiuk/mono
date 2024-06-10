@@ -3,12 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { Text, View } from 'react-native';
 import { ImageSVG } from '..';
+import { SecondScreenStepStack } from '../../App';
 import {
   AccumulationScreen,
   CardsScreen,
   CashBackScreen,
   CreditsScreen,
   MoreInformationScreen,
+  SecondScreenStep,
 } from '../../screens';
 
 const Tab = createBottomTabNavigator();

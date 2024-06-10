@@ -8,12 +8,14 @@ import {
   Text,
   Image,
   View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { ImageSVG } from '../../../components';
 import { HistoryList } from './HistoryList';
 import { useCallback, useEffect, useState } from 'react';
 
-export const SecondScreenStep = () => {
+export const SecondScreenStep = ({ navigation }) => {
   const [user, setUser] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -28,7 +30,7 @@ export const SecondScreenStep = () => {
     fetch('https://api.monobank.ua/personal/client-info', {
       method: 'GET',
       headers: {
-        'X-Token': 'APIIKey', // Your api key
+        'X-Token': 'uDJ2D2sDb5BNUW2JRuamQKYPXEgk74zD4LfCONp0qljI', // Your api key
       },
     })
       .then((response) => response.json())
@@ -121,20 +123,29 @@ export const SecondScreenStep = () => {
             Top up your card
           </Text>
         </View>
-        <View style={{ maxWidth: 70 }}>
-          <View
-            style={{
-              backgroundColor: '#1e1e1e',
-              padding: 15,
-              borderRadius: 100,
-            }}
-          >
-            <ImageSVG.CreditCardFastOutlineSvg />
+        <TouchableWithoutFeedback
+          onPress={() => {
+            console.log('robit');
+            navigation.navigate('TransactionOnCard');
+          }}
+        >
+          <View style={{ maxWidth: 70 }}>
+            <View
+              style={{
+                backgroundColor: '#1e1e1e',
+                padding: 15,
+                borderRadius: 100,
+              }}
+            >
+              <ImageSVG.CreditCardFastOutlineSvg />
+            </View>
+            <Text
+              style={{ color: 'white', textAlign: 'center', paddingTop: 4 }}
+            >
+              Transfer to the card
+            </Text>
           </View>
-          <Text style={{ color: 'white', textAlign: 'center', paddingTop: 4 }}>
-            Transfer to the card
-          </Text>
-        </View>
+        </TouchableWithoutFeedback>
         <View style={{ maxWidth: 70 }}>
           <View
             style={{
